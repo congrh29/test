@@ -1,0 +1,21 @@
+package cn.itcast.service;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import cn.itcast.dao.UserDao;
+import cn.itcast.entity.User;
+
+@Transactional
+public class UserService {
+
+	private UserDao userDao;
+
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
+
+	public User loginUser(User user) {
+		return userDao.loginUser(user);
+	}
+	
+}
